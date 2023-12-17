@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
         docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-        docker build -t ChatGPT-Discord-Bot .
-        docker tag ChatGPT-Discord-Bot:latest aehryn/ChatGPT-Discord-Bot:latest
-        docker push aehryn/ChatGPT-Discord-Bot:latest
+        docker build -t chatgpt-discord-bot .
+        docker tag chatgpt-discord-bot:latest aehryn/chatgpt-discord-bot:latest
+        docker push aehryn/chatgpt-discord-bot:latest
