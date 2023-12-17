@@ -1,14 +1,16 @@
-FROM node:16.13.1-alpine3.12
+# Stage 1: Build the application
+FROM node:16.13.1-alpine3.12 AS builder
 
-# Create APP Directory
 COPY . /app
 WORKDIR /app
 
-# Install Dependencies
 COPY package*.json ./
 RUN npm install
 
-# Bundle Source
-COPY . .
+# Stage 2: Run the application
+FROM node:16.13.1-alpine3.12
+
+COPY --from=builder /app /app
+WORKDIR /app
 
 CMD ["npm", "run", "start"]
