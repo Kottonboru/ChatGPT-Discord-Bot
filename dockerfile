@@ -11,4 +11,4 @@ RUN npm ci
 # Bundle Source
 COPY . .
 
-CMD ["node", "./src/index.js"]
+CMD ["node", "start"]
